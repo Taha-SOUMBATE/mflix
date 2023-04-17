@@ -1,11 +1,15 @@
 import clientPromise from "../lib/mongodb";
 import "bootstrap/dist/css/bootstrap.css";
+import Link from "next/link";
 export default function Movies({ movies }) {
   return (
     <div className="container">
-      <h1>Top 20 Movies of All Time</h1>
+      <h1>Top 21 Movies of All Time</h1>
       <p>
-        <small>(According to Metacritic)</small>
+        <small>(According to Metacritic)</small><br />
+        <Link className="btn btn btn-secondary" href="/">
+          home
+        </Link>
       </p>
       <div className="row">
         {movies.map((movie) => (
@@ -34,7 +38,7 @@ export async function getServerSideProps() {
       .collection("movies")
       .find({})
       .sort({ metacritic: -1 })
-      .limit(10)
+      .limit(21)
       .toArray();
 
     return {
