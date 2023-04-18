@@ -7,7 +7,7 @@ export default function Top({ movies }) {
     <div className="container">
       <h1>Top 1000 Movies of All Time</h1>
       <p>
-        <small>(According to Metacritic)</small><br />
+        <small>(According to Metacritic)</small><br /><br />
         <Link className="btn btn btn-secondary" href='/'>home</Link>
       </p>
       <div className="row">
